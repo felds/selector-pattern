@@ -1,0 +1,20 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+
+    <p>
+        <a href="#">New Order</a>
+    </p>
+
+    <ul>
+        {% for entity in entities %}
+            <li>{{ entity }}</li>
+        {% endfor %}
+    </ul>
+
+    <p>
+        <a href="{{ path('homepage') }}">Back</a>
+    </p>
+
+{% endblock %}
+
