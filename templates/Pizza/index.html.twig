@@ -4,12 +4,10 @@
         <a href="{{ path('app_pizza_new') }}">New pizza</a>
     </p>
 
-    <table border="1" width="100%">
+    <ul>
         {% for entity in entities %}
-            <tr>
-                <td>{{ entity }}</td>
-            </tr>
+            <li>{{ entity }}</li>
         {% endfor %}
-    </table>
+    </ul>
 
 {% endblock %}
