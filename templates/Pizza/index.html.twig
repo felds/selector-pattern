@@ -1,3 +1,6 @@
+{% extends "base.html.twig" %}
+
+
 {% block body %}
 
     <p>
@@ -9,5 +12,9 @@
             <li>{{ entity }}</li>
         {% endfor %}
     </ul>
+
+    <p>
+        <a href="{{ path('homepage') }}">Back</a>
+    </p>
 
 {% endblock %}
