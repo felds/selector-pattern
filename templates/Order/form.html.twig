@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <h1>New Order</h1>
+
+    {#
+        ...I'm waiting for that final moment
+            You say the words that I can't say ...
+    #}
+
+    <hr>
+
+    {{ form_start(form) }}
+    
+    {{ form_errors(form) }}
+    {{ form_widget(form) }}
+
+    <hr>
+    
+    <p>
+        <button type="submit" class="btn btn-primary">Ok</button>
+        <a href="{{ path('app_order_index') }}" class="btn btn-link">Cancel</a>
+    </p>
+    
+    {{ form_end(form) }}
+
+{% endblock %}
+
