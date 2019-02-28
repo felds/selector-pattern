@@ -12,7 +12,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 class Pizza
 {
     /**
-     * @var ?int
+     * @var int|null
      * @ORM\Column(type="integer")
      * @ORM\Id()
      * @ORM\GeneratedValue()
@@ -22,7 +22,7 @@ class Pizza
     /**
      * The name of the pizza.
      *
-     * @var ?string;
+     * @var string|null
      * @ORM\Column()
      * @Assert\NotBlank()
      */
@@ -37,7 +37,7 @@ class Pizza
      */
     private $price = 0;
 
-    public function __toString()
+    public function __toString(): string
     {
         return "{$this->flavor} ({$this->getFormattedPrice()})";
     }
@@ -48,25 +48,25 @@ class Pizza
     }
 
     /**
-     * @return mixed
+     * @return int|null
      */
-    public function getId()
+    public function getId(): ?int
     {
         return $this->id;
     }
 
     /**
-     * @return mixed
+     * @return string|null
      */
-    public function getFlavor()
+    public function getFlavor(): ?string
     {
         return $this->flavor;
     }
 
     /**
-     * @param mixed $flavor
+     * @param string|null $flavor
      */
-    public function setFlavor($flavor): void
+    public function setFlavor(?string $flavor): void
     {
         $this->flavor = $flavor;
     }
