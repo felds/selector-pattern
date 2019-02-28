@@ -12,18 +12,44 @@
     <hr>
 
     {{ form_start(form) }}
-    
-    {{ form_errors(form) }}
-    {{ form_widget(form) }}
+
+    {{ form_row(form.customer) }}
+    {{ form_row(form.pizza, {
+        attr: {
+            "data-widget": "selector",
+            "data-url": path('app_pizza_select'),
+        }
+    }) }}
 
     <hr>
-    
+
     <p>
         <button type="submit" class="btn btn-primary">Ok</button>
         <a href="{{ path('app_order_index') }}" class="btn btn-link">Cancel</a>
     </p>
-    
+
     {{ form_end(form) }}
 
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+
+    <script>
+        $('[data-widget=selector]')
+            .parent()
+            .empty()
+            .html(`
+                <div class="input-group mb-3">
+                    <div class="form-control">Beleza</div>
+                    <div class="input-group-append">
+                        <button class="btn btn-info" type="button">Button</button>
+                    </div>
+                </div>
+            `)
+        ;
+
+        // $('#selector-modal').modal('show')
+    </script>
 {% endblock %}
 

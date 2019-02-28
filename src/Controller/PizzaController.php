@@ -58,4 +58,12 @@ class PizzaController extends AbstractController
             'form' => $form->createView(),
         ]);
     }
+
+    /**
+     * @Route("/select")
+     */
+    public function select(Request $request)
+    {
+
+    }
 }
